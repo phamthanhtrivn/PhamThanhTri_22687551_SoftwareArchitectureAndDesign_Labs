@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: producer
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: user
+    password: password
+
+queue:
+  order: order_queue
+  dlq: order_queue.dlq
+
+server:
+  port: 8080
