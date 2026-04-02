@@ -1,0 +1,6 @@
+services:
+  nginx: 
+    image: nginx:1.29.7
+    container_name: tri_nginx
+    ports:
+      - 8080:80
