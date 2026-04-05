@@ -2,6 +2,7 @@ services:
   mysql:
     image: mysql:8.0
     container_name: tri_mysql
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mydb
@@ -9,4 +10,9 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
     

@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7
+    container_name: my_redis
+    ports:
+      - "6379:6379"
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M

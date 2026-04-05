@@ -1,0 +1,7 @@
+services:
+  flaskapp:
+    build: .
+    container_name: flask_container
+    ports:
+      - "5000:5000"
+    restart: always
