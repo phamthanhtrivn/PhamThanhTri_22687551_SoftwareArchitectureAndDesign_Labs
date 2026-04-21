@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  booking-service:
+    build: .
+    ports:
+      - "8083:8083"
+    environment:
+      - MONGODB_URI=mongodb://booking-db:27017/movie_booking_db
+      # RABBITMQ_URL should point to the User Service Machine IP (172.16.56.67)
+      - RABBITMQ_URL=amqp://172.16.56.67
+    depends_on:
+      - booking-db
+
+  booking-db:
+    image: mongo:latest
+    ports:
+      - "27020:27017"
+    volumes:
+      - booking-db-data:/data/db
+
+volumes:
+  booking-db-data:
